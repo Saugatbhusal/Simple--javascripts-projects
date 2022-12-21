@@ -1,0 +1,60 @@
+--------------------------------------------index.html-----------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter a number to be converted: <input type="number" id="num" placeholder="Enter a amount"><br>
+    <br>
+
+    <button id="celsis">Convert to celsis</button>
+
+    <button id="ferinhit">Convert to ferinhit</button>
+
+    <br>
+
+    <br>
+
+    Temperature in celsis:<span id="c"></span>
+
+    <br><br>
+
+    Temperature in forenhit:<span id="f"></span>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+---------------------------------------------main.js---------------------------------------------------------
+function celsis(){
+
+    let num = parseInt(document.getElementById('num').value);
+
+    let result = Math.floor((5*(num-32))/9);
+     
+    document.getElementById('c').innerHTML = result;
+
+
+};
+var btn = document.getElementById('celsis');
+btn.addEventListener('click',celsis);
+
+
+function ferinhit(){
+
+    let num = parseInt(document.getElementById('num').value);
+
+    let result = Math.floor(num * 9 / 5 + 32);
+     
+    document.getElementById('f').innerHTML = result;
+
+
+};
+var btn = document.getElementById('ferinhit');
+btn.addEventListener('click',ferinhit);
