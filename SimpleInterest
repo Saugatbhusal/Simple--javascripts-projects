@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple intrest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div class="container"> -->
+    <div class="calculator">
+    <h1>Simple interest</h1>
+    <label for="amount">Princple amount</label>
+    <br>
+    <input type="number" id="amount" placeholder="Enter a amount">
+    <br>
+
+<label for="rate">Rate (%)</label>
+    <br>
+    <input type="number" id="rate" placeholder="Enter rate">
+    <br>
+    
+    <label for="time">Time</label>
+    <br>
+    <input type="number" id="time" placeholder="Enter time">
+        <button onclick="answer()">Calculate</button>
+    <p>Principle Intrest: <span id="output_1"></span></p>
+    <P>Total Interest: <span id="output_2"></span></P>
+    <P>Total value: <span id="output_3"></span></P>
+</div>
+<!-- </div> -->
+<script src="main.js"></script>
+</body>
+</html>
+---------------------------------------------------------main.js------------------------------------------------------------------------------
+function answer(){
+    var amount_input=parseInt(document.getElementById("amount").value);
+
+    var rate_input=parseInt(document.getElementById("rate").value);
+
+    var time_input=parseInt(document.getElementById("time").value);
+
+    var interest=amount_input*rate_input*time_input/100;
+
+    var total=interest+amount_input;
+
+    document.getElementById('output_1').innerHTML=amount_input;
+
+    document.getElementById('output_2').innerHTML=interest;
+
+    document.getElementById('output_3').innerHTML=total;
+}
